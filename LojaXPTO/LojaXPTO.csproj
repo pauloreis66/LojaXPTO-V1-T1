@@ -70,6 +70,7 @@
     <Compile Include="FormsProdutos.Designer.cs">
       <DependentUpon>FormsProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produtos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
