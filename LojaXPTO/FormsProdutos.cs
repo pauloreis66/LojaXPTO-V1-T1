@@ -217,7 +217,51 @@ namespace LojaXPTO
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (posLista != -1)
+            {
+                //remover da listbox
+                lstProdutos.Items.RemoveAt(posLista);
+                posLista = -1;
+                statusMsg.Text = "Eliminado um produto.";
+                Limpar();
+            }
+        }
 
+        private void txtCodigo_Leave(object sender, EventArgs e)
+        {
+            statusMsg.Text = "";
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //guardar cada item da listbox para o vetor de produtos
+            foreach (var item in lstProdutos.Items)
+            {
+                string[] campos = item.ToString().Split('|');
+
+                //converter para o tipo de dados dos atributos da classe produtos
+                int codigo = Convert.ToInt32(campos[0].Trim());
+                string nomeProduto = campos[1].Trim();
+                int categoria = 1;
+                if (campos[2].Trim().Equals("Software"))
+                {
+                    categoria = 2;
+                }
+                double preco = Convert.ToDouble(campos[3].Trim());
+
+                //colocar o registo no array de Produtos
+                AdicionaProduto(new Produtos(codigo, nomeProduto, categoria, preco));
+            }
+
+            //abrir o formulário da listagem
+            Form f = new FormListarProdutos(produtos, num_produtos);
+            f.MdiParent = MdiParent;
+            f.Show();
+            f.Location = new Point(5, 5);
+            f.Dock = DockStyle.Fill;
+
+            //encerra o formulário (falta guardar depois num ficheiro de dados)
+            this.Close();
         }
     }
 }

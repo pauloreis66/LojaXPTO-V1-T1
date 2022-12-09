@@ -38,12 +38,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lstProdutos = new System.Windows.Forms.ListBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lstProdutos = new System.Windows.Forms.ListBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.status.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,8 @@
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(76, 26);
-            this.txtCodigo.TabIndex = 10;
+            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // label1
             // 
@@ -103,7 +104,7 @@
             this.txtProduto.Margin = new System.Windows.Forms.Padding(2);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.Size = new System.Drawing.Size(281, 26);
-            this.txtProduto.TabIndex = 11;
+            this.txtProduto.TabIndex = 2;
             // 
             // cbCategoria
             // 
@@ -114,7 +115,7 @@
             this.cbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(158, 28);
-            this.cbCategoria.TabIndex = 12;
+            this.cbCategoria.TabIndex = 3;
             // 
             // label6
             // 
@@ -145,52 +146,19 @@
             this.txtPreco.Margin = new System.Windows.Forms.Padding(2);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(76, 26);
-            this.txtPreco.TabIndex = 10;
+            this.txtPreco.TabIndex = 4;
             // 
-            // btnNovo
+            // lstProdutos
             // 
-            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Image = global::LojaXPTO.Properties.Resources.Badge_plus_icon;
-            this.btnNovo.Location = new System.Drawing.Point(18, 341);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(118, 56);
-            this.btnNovo.TabIndex = 13;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Image = global::LojaXPTO.Properties.Resources.Badge_tick_icon;
-            this.btnAtualizar.Location = new System.Drawing.Point(140, 341);
-            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(118, 56);
-            this.btnAtualizar.TabIndex = 13;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAtualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = global::LojaXPTO.Properties.Resources.Badge_multiply_icon;
-            this.btnEliminar.Location = new System.Drawing.Point(385, 341);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(118, 56);
-            this.btnEliminar.TabIndex = 13;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.lstProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstProdutos.FormattingEnabled = true;
+            this.lstProdutos.ItemHeight = 16;
+            this.lstProdutos.Location = new System.Drawing.Point(428, 37);
+            this.lstProdutos.Margin = new System.Windows.Forms.Padding(2);
+            this.lstProdutos.Name = "lstProdutos";
+            this.lstProdutos.Size = new System.Drawing.Size(317, 276);
+            this.lstProdutos.TabIndex = 9;
+            this.lstProdutos.DoubleClick += new System.EventHandler(this.lstProdutos_DoubleClick);
             // 
             // btnCancelar
             // 
@@ -200,7 +168,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(118, 56);
-            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -215,23 +183,57 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(185, 56);
-            this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.TabIndex = 10;
             this.btnGuardar.Text = "Guardar e Sair";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // lstProdutos
+            // btnEliminar
             // 
-            this.lstProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstProdutos.FormattingEnabled = true;
-            this.lstProdutos.ItemHeight = 16;
-            this.lstProdutos.Location = new System.Drawing.Point(428, 37);
-            this.lstProdutos.Margin = new System.Windows.Forms.Padding(2);
-            this.lstProdutos.Name = "lstProdutos";
-            this.lstProdutos.Size = new System.Drawing.Size(317, 276);
-            this.lstProdutos.TabIndex = 14;
-            this.lstProdutos.DoubleClick += new System.EventHandler(this.lstProdutos_DoubleClick);
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Image = global::LojaXPTO.Properties.Resources.Badge_multiply_icon;
+            this.btnEliminar.Location = new System.Drawing.Point(385, 341);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(118, 56);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.Image = global::LojaXPTO.Properties.Resources.Badge_tick_icon;
+            this.btnAtualizar.Location = new System.Drawing.Point(140, 341);
+            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(118, 56);
+            this.btnAtualizar.TabIndex = 6;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAtualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Image = global::LojaXPTO.Properties.Resources.Badge_plus_icon;
+            this.btnNovo.Location = new System.Drawing.Point(18, 341);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(118, 56);
+            this.btnNovo.TabIndex = 5;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // FormsProdutos
             // 
