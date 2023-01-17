@@ -41,6 +41,8 @@ namespace LojaXPTO
         public int getFila() { return this.fila; }
         public int getPrateleira() { return this.prateleira; }
 
+
+
         //modificadores (setters)
         public void setCodigo(int codigo) { this.codigo =codigo; }
         public void setCategoria(string categoria) { this.categoria = categoria;}
