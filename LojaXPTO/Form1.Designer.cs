@@ -64,10 +64,11 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolsRegistarAvarias = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolLogin = new System.Windows.Forms.ToolStripButton();
             this.toolLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolLogin = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu.SuspendLayout();
             this.tools.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,7 +86,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(1112, 38);
+            this.menu.Size = new System.Drawing.Size(1184, 38);
             this.menu.TabIndex = 3;
             this.menu.Text = "menu";
             // 
@@ -107,9 +108,11 @@
             // 
             // abrirToolStripMenuItem
             // 
+            this.abrirToolStripMenuItem.Image = global::LojaXPTO.Properties.Resources.Folder_icon;
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(240, 34);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(244, 34);
             this.abrirToolStripMenuItem.Text = "&Abrir";
+            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -205,6 +208,7 @@
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
             this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(189, 34);
             this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // vendasToolStripMenuItem
             // 
@@ -262,10 +266,10 @@
             // 
             this.status.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.status.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.status.Location = new System.Drawing.Point(0, 590);
+            this.status.Location = new System.Drawing.Point(0, 689);
             this.status.Name = "status";
             this.status.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.status.Size = new System.Drawing.Size(1112, 22);
+            this.status.Size = new System.Drawing.Size(1184, 22);
             this.status.TabIndex = 4;
             this.status.Text = "status";
             // 
@@ -286,7 +290,7 @@
             this.toolLogin});
             this.tools.Location = new System.Drawing.Point(0, 38);
             this.tools.Name = "tools";
-            this.tools.Size = new System.Drawing.Size(1112, 39);
+            this.tools.Size = new System.Drawing.Size(1184, 39);
             this.tools.TabIndex = 5;
             this.tools.Text = "toolStrip1";
             // 
@@ -298,6 +302,7 @@
             this.toolsAbrir.Name = "toolsAbrir";
             this.toolsAbrir.Size = new System.Drawing.Size(36, 36);
             this.toolsAbrir.Text = "Abrir ficheiro";
+            this.toolsAbrir.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
             // toolsGuardar
             // 
@@ -356,26 +361,15 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
-            // panel1
+            // toolLabel
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 513);
-            this.panel1.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LojaXPTO.Properties.Resources.Tech_Support_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 106);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.toolLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolLabel.AutoSize = false;
+            this.toolLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.toolLabel.Name = "toolLabel";
+            this.toolLabel.Size = new System.Drawing.Size(126, 36);
+            this.toolLabel.Text = "Login";
+            this.toolLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolLogin
             // 
@@ -389,27 +383,45 @@
             this.toolLogin.ToolTipText = "Login de Utilizador";
             this.toolLogin.Click += new System.EventHandler(this.toolLogin_Click);
             // 
-            // toolLabel
+            // panel1
             // 
-            this.toolLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolLabel.AutoSize = false;
-            this.toolLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.toolLabel.Name = "toolLabel";
-            this.toolLabel.Size = new System.Drawing.Size(126, 36);
-            this.toolLabel.Text = "Login";
-            this.toolLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel1.Controls.Add(this.monthCalendar1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 77);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 612);
+            this.panel1.TabIndex = 6;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 220);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LojaXPTO.Properties.Resources.Tech_Support_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(70, 76);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(96, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 612);
+            this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tools);
             this.Controls.Add(this.status);
             this.Controls.Add(this.menu);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loja XPTO";
@@ -465,6 +477,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripButton toolLogin;
         private System.Windows.Forms.ToolStripLabel toolLabel;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
 

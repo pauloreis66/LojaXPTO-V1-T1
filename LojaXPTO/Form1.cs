@@ -142,5 +142,23 @@ namespace LojaXPTO
             //ajustar ferramentas conforme o nivel de acesso
             MostrarTools(0);
         }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int findex;
+            if (!ExisteNoParent(typeof(FormCategorias), out findex))
+            {
+                Form f = new FormCategorias();
+                f.MdiParent = this;
+                f.Show();
+                f.Location = new Point(5, 5);
+                f.Dock = DockStyle.Fill;
+            }
+        }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("");
+        }
     }
 }
