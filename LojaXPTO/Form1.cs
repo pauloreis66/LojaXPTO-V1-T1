@@ -155,5 +155,10 @@ namespace LojaXPTO
                 f.Dock = DockStyle.Fill;
             }
         }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("");
+        }
     }
 }
